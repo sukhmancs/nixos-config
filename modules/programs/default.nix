@@ -19,5 +19,6 @@
   ./wofi.nix
   ./vscode.nix
   ./timers.nix
+  ./firejail.nix
   #./games.nix
 ]
