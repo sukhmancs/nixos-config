@@ -209,6 +209,7 @@ This will depend on the host chosen.
     - [[https://nixos.wiki/wiki/Home_Manager][NixOS wiki]]
   - Flakes
     - [[https://nixos.wiki/wiki/Flakes][NixOS wiki]]
+    - [[https://jvns.ca/blog/2023/11/11/notes-on-nix-flakes/][Julia Evans's blog]]
     - [[https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html][Manual]]
     - [[https://www.tweag.io/blog/2020-05-25-flakes/][Some]] [[https://christine.website/blog/nix-flakes-3-2022-04-07][Blogs]]
   - Nix-Darwin
