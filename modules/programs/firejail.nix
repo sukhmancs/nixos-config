@@ -20,9 +20,9 @@
           "--dbus-user.talk=org.freedesktop.Notifications"
         ];
       };
-      chromium = {
-        executable = "${pkgs.chromium}/bin/chromium";
-        profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
+      google-chrome = {
+        executable = "${pkgs.google-chrome}/bin/google-chrome";
+        profile = "${pkgs.firejail}/etc/firejail/google-chrome.profile";
         extraArgs = [
           # Required for U2F USB stick
           "--ignore=private-dev"
