@@ -11,12 +11,12 @@
 #
 
 [
-  ./avahi.nix
+#  ./avahi.nix
   ./dunst.nix
   ./flameshot.nix
   ./picom.nix
   ./polybar.nix
-  ./samba.nix
+#  ./samba.nix
   ./sxhkd.nix
   ./udiskie.nix
 ]

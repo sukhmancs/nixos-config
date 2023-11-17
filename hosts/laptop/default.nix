@@ -19,7 +19,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/desktops/virtualisation/docker.nix
+#    ../../modules/desktops/virtualisation/docker.nix
   ];
 
   boot = {                                  # Boot Options

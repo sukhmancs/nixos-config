@@ -2,7 +2,7 @@
 #  Firejail - Sandbox programs to give them restricted permissions
 #
 
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.firejail = {
@@ -22,15 +22,11 @@
       };
       google-chrome = {
         executable = "${pkgs.google-chrome}/bin/google-chrome";
-        profile = "${pkgs.firejail}/etc/firejail/google-chrome.profile";
-        extraArgs = [
-          # Required for U2F USB stick
-          "--ignore=private-dev"
-          # Enforce dark mode
-          "--env=GTK_THEME=Adwaita:dark"
-          # Enable system notifications
-          "--dbus-user.talk=org.freedesktop.Notifications"
-        ];
+        profile = "${pkgs.firejail}/etc/firejail/google-chrome.profile";        
+      };
+      firefox = {
+        executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
       };
       signal-desktop = {
         executable = "${pkgs.signal-desktop}/bin/signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland";

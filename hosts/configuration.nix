@@ -167,6 +167,9 @@
       extraConfig = ''
         HostKeyAlgorithms +ssh-rsa
       '';
+      settings = {
+        PermitRootLogin = "no";             # Disable root login via ssh
+      };
     };
   };
 
