@@ -19,5 +19,6 @@
 #  ./samba.nix
   ./sxhkd.nix
   ./udiskie.nix
+  ./clamav.nix
 ]
 

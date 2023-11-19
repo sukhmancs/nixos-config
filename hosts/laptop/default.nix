@@ -53,7 +53,8 @@
     systemPackages = with pkgs; [           # System-Wide Packages
       simple-scan       # Scanning
       onlyoffice-bin    # Office
-      kazam
+      kazam             # Recording
+      clamav            # Antivirus
     ];
   };
 
