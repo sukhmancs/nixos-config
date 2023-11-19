@@ -16,7 +16,7 @@
           Type = "oneshot";
           ExecStart = toString (
            pkgs.writeShellScript "startup_commands_script" ''
-            PATH=$PATH:${lib.makeBinPath [ pkgs.dunst pkgs.megasync pkgs.networkmanagerapplet ]}
+            PATH=$PATH:${lib.makeBinPath [ pkgs.dunst pkgs.megasync pkgs.networkmanagerapplet pkgs.chkrootkit ]}
             ${pkgs.bash}/bin/bash "/home/sukhman/Documents/sway_related/startup_commands.sh";
   	 ''
   	);

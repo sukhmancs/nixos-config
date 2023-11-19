@@ -128,6 +128,13 @@
       calibre
       telegram-desktop
       xwinwrap
+      mailutils
+
+      # System hardening
+#      snort             # Intrusion prevention and detection system
+
+      chkrootkit         # Scan for any rootkits
+      clamav             # Antivirus
 
       # Other Packages Found @
       # - ./<host>/default.nix
