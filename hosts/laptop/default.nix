@@ -54,7 +54,6 @@
       simple-scan       # Scanning
       onlyoffice-bin    # Office
       kazam             # Recording
-      qutebrowser       # Keybord based browser
     ];
   };
 
