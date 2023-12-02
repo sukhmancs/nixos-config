@@ -201,6 +201,8 @@
 
       chkrootkit         # Scan for any rootkits
       clamav             # Antivirus
+      vulnix             # NixOS vulnerability scanner
+      lynis              # Security auditing tool
 
       # Other Packages Found @
       # - ./<host>/default.nix
@@ -234,16 +236,16 @@
       pulse.enable = true;
       jack.enable = true;
     };
-    openssh = {                             # SSH
-      enable = true;
-      allowSFTP = true;                     # SFTP
-      extraConfig = ''
-        HostKeyAlgorithms +ssh-rsa
-      '';
-      settings = {
-        PermitRootLogin = "no";             # Disable root login via ssh
-      };
-    };
+#    openssh = {                             # SSH
+#      enable = true;
+#      allowSFTP = true;                     # SFTP
+#      extraConfig = ''
+#        HostKeyAlgorithms +ssh-rsa
+#      '';
+#      settings = {
+#        PermitRootLogin = "no";             # Disable root login via ssh
+#      };
+#    };
   };
 
   nix = {                                   # Nix Package Manager Settings
