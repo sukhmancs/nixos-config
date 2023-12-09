@@ -54,6 +54,7 @@
       simple-scan       # Scanning
       onlyoffice-bin    # Office
       kazam             # Recording
+      unityhub          # Unity Hub
     ];
   };
 

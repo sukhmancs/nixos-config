@@ -43,7 +43,7 @@ in
               };
 
               "window" = {
-                location = mkLiteral "northwest";
+                location = mkLiteral "center";
                 width = mkLiteral "280px";
                 x-offset = mkLiteral "8px";
                 y-offset = mkLiteral "34px";

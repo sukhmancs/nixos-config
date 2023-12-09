@@ -195,6 +195,7 @@
       telegram-desktop
       xwinwrap
       mailutils
+      textsnatcher       # Copy Text from image
 
       # System hardening
 #      snort             # Intrusion prevention and detection system
