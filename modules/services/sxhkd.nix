@@ -17,6 +17,8 @@
             "super + e" = "pcmanfm";                              # File Browser
             "Print" = "flameshot gui";                            # Screenshots
             "super + p" = "flameshot gui";
+            # Copy Text from image using flameshot
+            "super + y" = "flameshot gui --raw | tesseract stdin stdout -l eng | xclip -in -selection clipboard";
 
             # Bspwm
             "super + {q,k}" = "bspc node -{c,k}";                 # Close or Kill

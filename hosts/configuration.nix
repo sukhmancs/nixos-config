@@ -26,6 +26,7 @@
 
 {
   imports = ( import ../modules/desktops ++
+              import ../modules/desktops/virtualisation ++
               import ../modules/editors ++
               import ../modules/hardware ++
               import ../modules/programs ++
@@ -45,14 +46,6 @@
 
   ################################## SYSTEM HARDENING - START ###################################
 
-  # enable network manager
-  #networking.networkmanager.enable = true;
-  #systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
-
-  # This setting is needed for DNS proxy client
-  # You should set your DNS nameservers statically 
-  # and make sure that your network manager won't override 
-  # your carefully set nameservers with some random settings it received over DHCP
   networking = {
     nameservers = [ "127.0.0.1" "::1" ];
     # If using dhcpcd:
@@ -123,7 +116,7 @@
     sudo.wheelNeedsPassword = false;
   };
 
-  fonts.fonts = with pkgs; [                # Fonts
+  fonts.packages = with pkgs; [             # Fonts
     carlito                                 # NixOS
     vegur                                   # NixOS
     source-code-pro
@@ -195,19 +188,15 @@
       telegram-desktop
       xwinwrap
       mailutils
-      textsnatcher       # Copy Text from image
+      tesseract4
+      tor-browser-bundle-bin 
 
-      # System hardening
-#      snort             # Intrusion prevention and detection system
+    #### System hardening
 
-      chkrootkit         # Scan for any rootkits
+      #chkrootkit         # Scan for any rootkits
       clamav             # Antivirus
       vulnix             # NixOS vulnerability scanner
       lynis              # Security auditing tool
-
-      # Other Packages Found @
-      # - ./<host>/default.nix
-      # - ../modules
     ];
   };
 
@@ -237,17 +226,9 @@
       pulse.enable = true;
       jack.enable = true;
     };
-#    openssh = {                             # SSH
-#      enable = true;
-#      allowSFTP = true;                     # SFTP
-#      extraConfig = ''
-#        HostKeyAlgorithms +ssh-rsa
-#      '';
-#      settings = {
-#        PermitRootLogin = "no";             # Disable root login via ssh
-#      };
-#    };
   };
+
+  flatpak.enable = true;                    # Enable flatpak
 
   nix = {                                   # Nix Package Manager Settings
     settings ={

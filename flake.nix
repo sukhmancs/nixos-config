@@ -12,12 +12,12 @@
   description = "Nix, NixOS and Nix Darwin System Flake Configuration";
 
   inputs =                                                                  # References Used by Flake
-    {
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";                     # Stable Nix Packages (Default)
-      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";         # Unstable Nix Packages
+    {      
+      nixpkgs.url = "github:nixos/nixpkgs/release-23.11";                   # Stable Nix Packages (Default)
+      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";         # Unstable
 
       home-manager = {                                                      # User Environment Manager
-        url = "github:nix-community/home-manager/release-23.05";
+        url = "github:nix-community/home-manager/release-23.11";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
