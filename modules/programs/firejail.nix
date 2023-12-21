@@ -5,27 +5,20 @@
 { pkgs, lib, ... }:
 
 {
-  programs.firejail = {
-  enable = true;
-  wrappedBinaries = {
-    librewolf = {
-      executable = "${pkgs.librewolf}/bin/librewolf";
-      profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
-      extraArgs = [
-        # Required for U2F USB stick
-        "--ignore=private-dev"
-        # Enforce dark mode
-        "--env=GTK_THEME=Adwaita:dark"
-        # Enable system notifications
-        "--dbus-user.talk=org.freedesktop.Notifications"
-      ];
-    };
-    signal-desktop = {
-      executable = "${pkgs.signal-desktop}/bin/signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      profile = "${pkgs.firejail}/etc/firejail/signal-desktop.profile";
-      extraArgs = [ "--env=LC_ALL=C" "--env=GTK_THEME=Adwaita:dark" ];
-    };
+  # enable firejail
+  programs.firejail.enable = true;
+
+  # create system-wide executables firefox and chromium
+  # that will wrap the real binaries so everything
+  # work out of the box.
+  programs.firejail.wrappedBinaries = {
+      firefox = {
+          executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
+          profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+      };
+      chromium = {
+          executable = "${pkgs.lib.getBin pkgs.chromium}/bin/chromium";
+          profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
+      };
   };
-};
- 
 }

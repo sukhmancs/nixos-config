@@ -17,10 +17,13 @@
 { config, pkgs, vars, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-#    ../../modules/desktops/virtualisation/docker.nix
-  ];
+  imports = 
+  [ 
+    ./hardware-configuration.nix 
+    ../../modules/services/wifi/wifi.nix
+    #../../modules/profiles/nixos_hardened.nix
+  ] ++
+  ( import ../../modules/desktops/virtualisation );
 
   boot = {                                  # Boot Options
     loader = {
@@ -37,7 +40,6 @@
       };
       timeout = 1;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   hardware.sane = {                         # Scanning
@@ -54,7 +56,6 @@
       simple-scan       # Scanning
       onlyoffice-bin    # Office
       kazam             # Recording
-      unityhub          # Unity Hub
     ];
   };
 

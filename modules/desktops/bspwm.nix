@@ -109,11 +109,8 @@ in
             };
           };
           defaultSession = "none+bspwm";
-#          setupCommands = 
-#          ''
-#            ${pkgs.networkmanagerapplet}/bin/nm-applet &
-#          '';
         };
+
         windowManager= {
           bspwm = {                                 # Window Manager
             enable = true;
@@ -199,10 +196,7 @@ in
               };
               "Steam" = {
                 desktop = "5";
-              };
-              "calibre-ebook-viewer" = {
-                state = "fullscreen";
-              };
+              };              
             };
             extraConfig = extraConf;
           };
