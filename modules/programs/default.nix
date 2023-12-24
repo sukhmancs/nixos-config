@@ -21,6 +21,5 @@
   ./timers.nix
   ./firejail.nix
   #./opensnitch.nix
-  #./libvirtd.nix
   #./games.nix
 ]

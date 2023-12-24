@@ -35,8 +35,10 @@
 
   users.users.${vars.user} = {              # System User
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" "adbusers" ];
   };
+
+  programs.adb.enable = true;
 
   time.timeZone = "America/Toronto";        # Time zone and Internationalisation
   i18n = {
@@ -126,7 +128,8 @@
       xwinwrap
       mailutils
       tesseract4
-      tor-browser-bundle-bin 
+      tor-browser-bundle-bin
+      keepass
 
     #### System hardening
 
@@ -140,11 +143,6 @@
   environment.shellAliases = {
     git-bare = "git --git-dir=$HOME/nixos-config-bare-repo/ --work-tree=/etc/nixos/nixos-config";
   };
-
-  # enable virtualbox
-  virtualisation.virtualbox.host.enable = true;
- # virtualisation.virtualbox.guest.enable = true;
- # virtualisation.virtualbox.guest.x11 = true;
 
   programs = {
     dconf.enable = true;
