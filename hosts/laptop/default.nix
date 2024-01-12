@@ -40,6 +40,10 @@
       };
       timeout = 1;
     };
+    kernelModules = [ "kvm-intel" "wl" ];
+    kernelParams = [ "intel_iommu=on" "iommu=pt" ];
+    #extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+    blacklistedKernelModules = [ "bcma" ];
   };
 
   hardware.sane = {                         # Scanning
@@ -56,8 +60,13 @@
       simple-scan       # Scanning
       onlyoffice-bin    # Office
       kazam             # Recording
+      unityhub
+      gnome.cheese      # Camera
+      xawtv
     ];
   };
+
+  hardware.facetimehd.enable = true;        # facetimehd support for macbook Facetime HD camera
 
   programs.light.enable = true;             # Monitor Brightness
 

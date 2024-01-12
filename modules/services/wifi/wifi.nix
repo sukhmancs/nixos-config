@@ -11,7 +11,7 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
     networkmanager.enable = true;
-    networkmanager.dns = "none";
+    networkmanager.dns = "none"; 
   };
 
   # Setup DNS proxy client

@@ -37,6 +37,7 @@ let
 
     feh --bg-tile $HOME/.config/wall                # Wallpaper
     #xwinwrap -fs -sp -b -nf -- mpv --no-osc -wid WID --loop=inf /home/sukhman/.config/wall.mp4
+    #killall -q nm-applet; nm-applet &
 
     polybar main & #2>~/log &
   '';

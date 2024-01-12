@@ -35,10 +35,8 @@
 
   users.users.${vars.user} = {              # System User
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" "adbusers" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" ];
   };
-
-  programs.adb.enable = true;
 
   time.timeZone = "America/Toronto";        # Time zone and Internationalisation
   i18n = {
@@ -129,7 +127,6 @@
       mailutils
       tesseract4
       tor-browser-bundle-bin
-      keepass
 
     #### System hardening
 
