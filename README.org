@@ -52,6 +52,3 @@ If you have nixos installed already, you can clone this repository:
 then build the flakes with:
 - ~$ sudo nixos-rebuild switch --flake <path>#<hostname>~
 - example ~$ sudo nixos-rebuild switch --flake .#laptop~
-
-** Great Thanks to Matthias Benaets
-I learned a lot from Matthias' nixos-configurations.
