@@ -61,8 +61,7 @@
       onlyoffice-bin    # Office
       kazam             # Recording
       unityhub
-      gnome.cheese      # Camera
-      xawtv
+      virtiofsd         # Needed for shared folder setup in virt-manager
     ];
   };
 
