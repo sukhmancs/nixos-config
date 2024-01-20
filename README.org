@@ -1,4 +1,4 @@
-#+title: Sukhmans' NixOS & Nix-Darwin System Configuration Flake
+#+title: My NixOS & Nix-Darwin System Configuration with Flake Enabled
 #+description: General information about my flake and how to set it up
 #+author: Matthias Benaets
 
