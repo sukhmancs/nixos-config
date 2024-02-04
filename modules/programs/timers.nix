@@ -16,8 +16,8 @@
           Type = "oneshot";
           ExecStart = toString (
            pkgs.writeShellScript "startup_commands_script" ''
-            PATH=$PATH:${lib.makeBinPath [ pkgs.dunst pkgs.megasync pkgs.networkmanagerapplet pkgs.chkrootkit pkgs.pcloud]}
-            ${pkgs.bash}/bin/bash "/home/sukhman/Documents/sway_related/startup_commands.sh";
+            PATH=$PATH:${lib.makeBinPath [ pkgs.dunst pkgs.megasync pkgs.networkmanagerapplet pkgs.chkrootkit pkgs.pcloud pkgs.goldendict-ng ]}
+            ${pkgs.bash}/bin/bash "/home/sukhman/.nixos_config/nixos-config/modules/programs/startup_commands.sh";
   	 ''
   	);
         };

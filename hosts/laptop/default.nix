@@ -62,6 +62,7 @@
       kazam             # Recording
       unityhub
       virtiofsd         # Needed for shared folder setup in virt-manager
+      goldendict-ng     # Dictionary - Ctrl + C, C to open dictionary lookup
     ];
   };
 
