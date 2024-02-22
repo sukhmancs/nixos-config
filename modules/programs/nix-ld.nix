@@ -104,5 +104,12 @@
         libdrm
         mesa
         libxkbcommon
+
+        ## Recently added
+        alsa-lib
+        xorg_sys_opengl
+        at-spi2-atk
+        nss_latest
+        vivaldi-ffmpeg-codecs
   ];
 }

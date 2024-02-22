@@ -23,6 +23,7 @@
   ./nix-ld.nix
   ./packages.nix
   ./command_not_found.nix
+  ./nix_alien.nix
   #./opensnitch.nix
   #./games.nix
 ]
