@@ -21,5 +21,6 @@
   ./udiskie.nix
   ./clamav.nix
   ./media.nix
+  ./mime_types.nix
 ]
 

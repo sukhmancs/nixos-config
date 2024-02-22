@@ -20,6 +20,8 @@
   ./vscode.nix
   ./timers.nix
   ./firejail.nix
+  ./nix-ld.nix
+  ./packages.nix
   #./opensnitch.nix
   #./games.nix
 ]
