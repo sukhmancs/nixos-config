@@ -56,9 +56,14 @@
         inputs.nixpkgs.follows = "nixpkgs";
         inputs.home-manager.follows = "nixpkgs";
       };
+      
+      nix-ld-rs = {                                                         # Run unpatched dynamic binaries on NixOS 
+        url = "github:nix-community/nix-ld-rs";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, darwin, nur, nixgl, doom-emacs, hyprland, plasma-manager, ... }:   # Function telling flake which inputs to use
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, darwin, nur, nixgl, doom-emacs, hyprland, plasma-manager, nix-ld-rs, ... }:   # Function telling flake which inputs to use
     let
       vars = {                                                              # Variables Used In Flake
         user = "sukhman";
@@ -71,7 +76,7 @@
       nixosConfigurations = (                                               # NixOS Configurations
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-unstable home-manager nur doom-emacs hyprland plasma-manager vars;   # Inherit inputs
+          inherit inputs nixpkgs nixpkgs-unstable home-manager nur doom-emacs hyprland plasma-manager nix-ld-rs vars;   # Inherit inputs
         }
       );
 

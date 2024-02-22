@@ -2,11 +2,12 @@
 ###  Run pre-compiled executables on NixOS  ###  
 ###
 
-{ pkgs, ... }: 
+{ pkgs, inputs, ... }: 
 
 {
   # Enable nix ld
   programs.nix-ld.enable = true;
+  programs.nix-ld.package = inputs.nix-ld-rs.packages.${pkgs.hostPlatform.system}.nix-ld-rs;
   programs.nix-ld.libraries = with pkgs; [
     alsa-lib
     at-spi2-atk
