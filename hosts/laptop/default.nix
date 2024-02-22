@@ -41,7 +41,7 @@
       timeout = 1;
     };
     kernelModules = [ "kvm-intel" "wl" ];
-    kernelParams = [ "intel_iommu=on" "iommu=pt" "GRUB_CMDLINE_LINUX_DEFAULT=preempt=voluntary" ];
+    kernelParams = [ "intel_iommu=on" "iommu=pt" ];
     #extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     blacklistedKernelModules = [ "bcma" ];
   };
@@ -62,7 +62,7 @@
       kazam             # Recording
       unityhub
       virtiofsd         # Needed for shared folder setup in virt-manager
-      blender           # 3d Modeling Software
+      goldendict-ng     # Dictionary - Ctrl + C, C to open dictionary lookup
     ];
   };
 
