@@ -85,6 +85,9 @@
       tldr              # Helper
       usbutils          # Manage USB
       wget              # Retriever
+      dpkg              # Debian package manager
+      file              # Get File Information
+      steam-run         # Run commands in the same FHS environment
 
       # Video/Audio
       alsa-utils        # Audio Control

@@ -66,7 +66,7 @@
     ];
   };
 
-  hardware.facetimehd.enable = true;        # facetimehd support for macbook Facetime HD camera
+  #hardware.facetimehd.enable = true;        # facetimehd support for macbook Facetime HD camera
 
   programs.light.enable = true;             # Monitor Brightness
 
