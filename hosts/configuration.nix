@@ -89,6 +89,7 @@
       # Video/Audio
       alsa-utils        # Audio Control
       feh               # Image Viewer
+      image-roll        # Image Viewer
       mpv               # Media Player
       pavucontrol       # Audio Control
       pipewire          # Audio Server/Control
