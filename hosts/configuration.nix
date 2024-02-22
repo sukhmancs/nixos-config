@@ -85,9 +85,7 @@
   programs = {
     dconf.enable = true;
   };
-
-
-
+ 
   services = {
     printing = {                            # CUPS
       enable = true;

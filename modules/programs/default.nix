@@ -22,6 +22,7 @@
   ./firejail.nix
   ./nix-ld.nix
   ./packages.nix
+  ./command_not_found.nix
   #./opensnitch.nix
   #./games.nix
 ]
