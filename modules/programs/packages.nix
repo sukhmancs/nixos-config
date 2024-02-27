@@ -46,6 +46,7 @@
       unzip             # Zip Files
       unrar             # Rar Files
       zip               # Zip
+      bleachbit         # A program to free up disk space
 
       # My Packages
       networkmanagerapplet

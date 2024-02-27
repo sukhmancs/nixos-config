@@ -10,10 +10,10 @@
 # dunst &
 
 # start nm-applet
-nm-applet 
+nm-applet &
 
 # Start GoldenDict-ng dictionary on startup
-#goldendict 
+goldendict 
 
 # Enables inhibit_idle when playing audio
 #sway-audio-idle-inhibit
