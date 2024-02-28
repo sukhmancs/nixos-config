@@ -18,6 +18,7 @@ pkgs.mkShell {
     export PIP_PREFIX=$(pwd)/_build/pip_packages
     export PYTHONPATH="$PIP_PREFIX/${pkgs.python3.sitePackages}:$PYTHONPATH"
     export PATH="$PIP_PREFIX/bin:$PATH"
+    export LD_LIBRARY_PATH="${stdenv.cc.cc.lib}/lib";
     unset SOURCE_DATE_EPOCH
   '';
 }
