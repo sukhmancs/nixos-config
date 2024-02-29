@@ -1,6 +1,10 @@
 ###
 ### Nix-index provides a "command-not-found" script. 
-### Run nix-index to download the database and for command-not-found to work
+### 
+### Run following command to download the database 
+### without any database command-not-found will not work:
+###  
+###   $ nix run github:nix-community/nix-index#nix-index 
 ###
 ### Example output: 
 ### $ blender
