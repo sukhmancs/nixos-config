@@ -49,7 +49,6 @@
       bleachbit         # A program to free up disk space
 
       # My Packages
-      git-lfs           # Store large files on a remote server (ML) 
       networkmanagerapplet
       neofetch
       tldr
