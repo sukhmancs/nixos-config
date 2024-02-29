@@ -18,7 +18,6 @@
   ./waybar.nix
   ./wofi.nix
   ./vscode.nix
-#  ./timers.nix
   ./firejail.nix
   ./nix-ld.nix
   ./packages.nix
