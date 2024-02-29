@@ -1,5 +1,6 @@
 ###
 ### Nix-index provides a "command-not-found" script. 
+### Run nix-index to download the database and for command-not-found to work
 ###
 ### Example output: 
 ### $ blender
@@ -16,10 +17,14 @@
 {
   # use "command-not-found" script provided by nix-shell
   programs.command-not-found.enable = false;
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   # for home-manager, use programs.bash.initExtra instead
-  programs.zsh.interactiveShellInit =
-  ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
+#  programs.zsh.interactiveShellInit =
+#  ''
+#    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+#  '';
 }
