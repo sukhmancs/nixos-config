@@ -22,5 +22,7 @@
   ./clamav.nix
   ./media.nix
   ./mime_types.nix
+  ./startup_service.nix
+  ./polkit_service.nix
 ]
 
