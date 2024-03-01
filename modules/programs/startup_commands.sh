@@ -10,7 +10,7 @@
 # dunst &
 
 # start nm-applet
-nm-applet &
+nm-applet 
 
 # Start GoldenDict-ng dictionary on startup
 #goldendict 

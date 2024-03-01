@@ -109,6 +109,41 @@
       BlockAboutConfig = true;                                      # Disable access to about:config page
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
+      ExtensionSettings = {
+        "*" = { # Default configuration for all other extensions (i.e Block installation of all other extensions)
+          blocked_install_message = 
+          "You do not have permissions to install extensions. 
+          Please change the FireFox policy in your NixOS configurations.";
+          installation_mode = "blocked";
+          allowed_types = ["extension"];
+        };
+        "uBlock0@raymondhill.net" = {     # UBlock Origin
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+        };
+        "extension@one-tab.com" = {       # Onetab
+          installation_mode = "allowed";
+        };
+        "jid1-MnnxcxisBPnSXQ@jetpack" = { # Privacy Badger
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+        };
+        "browser-extension@anonaddy" = {  # AnonAddy
+          installation_mode = "allowed";
+        };
+        "{9350bc42-47fb-4598-ae0f-825e3dd9ceba}" = { # Absolute enable right click
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/absolute-enable-right-click/latest.xpi";
+        };
+        "tridactyl.vim@cmcaine.co.uk" = { # tridactyle
+          installation_mode = "allowed";
+        };
+
+        "addon@darkreader.org" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+        };
+      };
     };
   };
 }
