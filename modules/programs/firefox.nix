@@ -4,7 +4,7 @@
 #   "Locked" means that the user can not change that value using FireFox UI. 
 #
 
-{ pkgs, ... }:
+{ pkgs, vars, ... }:
 
 {
   programs.firefox = {
@@ -25,6 +25,7 @@
           "https://login.microsoftonline.com/"
           "https://mymohawk.mohawkcollege.ca/"
           "https://mycanvas.mohawkcollege.ca/"
+          "https://reddit.com"
         ];
         Default = false;
         AcceptThirdParty = "never";
@@ -82,6 +83,9 @@
           Value = false;
           Status = "locked";
         };
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = {
+          Value = true;
+        };
       };
       SanitizeOnShutdown = {                                        # Delete data on quit
         Cache = true;
@@ -107,6 +111,8 @@
         Locked = false;
       };
       BlockAboutConfig = true;                                      # Disable access to about:config page
+      BlockAboutSupport = true;
+      BlockAboutProfiles = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
       ExtensionSettings = {
@@ -143,6 +149,11 @@
           installation_mode = "normal_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
         };
+      };
+      Homepage = { # Default HomePage settings
+        URL = "about:home";
+        Locked = true;
+        StartPage = "previous-session";
       };
     };
   };
