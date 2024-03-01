@@ -25,5 +25,5 @@
   ./nix_index.nix
   ./nix_alien.nix
   #./opensnitch.nix
-  #./games.nix
+  ./games.nix
 ]
