@@ -107,6 +107,8 @@
         Locked = false;
       };
       BlockAboutConfig = true;                                      # Disable access to about:config page
+      DisableFirefoxStudies = true;
+      DisableMasterPasswordCreation = true;
     };
   };
 }
