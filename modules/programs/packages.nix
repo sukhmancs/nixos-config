@@ -33,7 +33,7 @@
 
       # Apps
       appimage-run      # Runs AppImages on NixOS
-      firefox           # Browser
+      #firefox           # Browser
       google-chrome     # Browser
       remmina           # XRDP & VNC Client
 
