@@ -23,15 +23,18 @@
           "https://feedly.com/"
           "https://huggingface.co/"
           "https://login.microsoftonline.com/"
-          "https://mymohawk.mohawkcollege.ca/"
           "https://mycanvas.mohawkcollege.ca/"
-          "https://reddit.com"
+          "https://mymohawk.mohawkcollege.ca/"
+          "https://careerready.mohawkcollege.ca"
+          "http://beanthere.free.nf"
+          "https://sukhmansingh.netlify.app"
         ];
+        AllowSession = ["https://reddit.com"];
         Default = false;
         AcceptThirdParty = "never";
         RejectTracker = true;
         Locked = true;
-        Behavior = "reject";
+        Behavior = "reject-foreign";
         BehaviorPrivateBrowsing = "reject";
       };
       OfferToSaveLoginsDefault = false;                 # Disable save Logins
@@ -115,6 +118,12 @@
       BlockAboutProfiles = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
+      CaptivePortal = false;
+      DisableTelemetry = true;
+      DNSOverHTTPS = {   # Disable DNS queries over https because I am using dnscryptproxy on system. 
+        Enabled = false;
+        Locked = true;
+      };
       ExtensionSettings = {
         "*" = { # Default configuration for all other extensions (i.e Block installation of all other extensions)
           blocked_install_message = 
