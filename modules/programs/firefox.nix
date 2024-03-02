@@ -16,7 +16,7 @@
         Cryptomining = true;
         Fingerprinting = true;
       };
-      Cookies = {                                       # Disable Cookies 
+      Cookies = {                                       # Disable Cookies, Delete cookies after session
         Allow = [
           "https://chat.openai.com/"
           "https://github.com/"
