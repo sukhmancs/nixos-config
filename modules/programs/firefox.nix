@@ -116,11 +116,17 @@
       BlockAboutConfig = true;                                      # Disable access to about:config page
       BlockAboutSupport = true;
       BlockAboutProfiles = true;
+      BlockAboutAddons = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
       CaptivePortal = false;
       DisableTelemetry = true;
-      DNSOverHTTPS = {   # Disable DNS queries over https because I am using dnscryptproxy on system. 
+      DownloadDirectory = "~/Downloads/Firefox";
+      DNSOverHTTPS = { # Disable DNS queries over https because I am using dnscryptproxy on system. 
+        Enabled = false;
+        Locked = true;
+      };
+      EncryptedMediaExtensions = {                                  # Disable DRM Content
         Enabled = false;
         Locked = true;
       };
