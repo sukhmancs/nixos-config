@@ -19,6 +19,7 @@
       Cookies = {                                       # Disable Cookies, Delete cookies after session
         Allow = [
           "https://chat.openai.com/"
+          "https://gemini.google.com/"
           "https://github.com/"
           "https://feedly.com/"
           "https://huggingface.co/"
