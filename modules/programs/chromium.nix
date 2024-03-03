@@ -1,6 +1,9 @@
 { pkgs, vars, ... }:
 
 {
+  # required to run chromium
+  security.chromiumSuidSandbox.enable = true;
+
   programs.chromium = {
     enable = true;
 #    extensions = [
