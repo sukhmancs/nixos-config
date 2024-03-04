@@ -121,8 +121,14 @@
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
       CaptivePortal = false;
+      DontCheckDefaultBrowser = true;
+      DisplayMenuBar = "never";
       DisableTelemetry = true;
       DownloadDirectory = "~/Downloads/Firefox";
+      WebsiteFilter = {
+          Block = ["file://*/*"];
+          #Exceptions = ["http://example.org/*"];
+      };
       DNSOverHTTPS = { # Disable DNS queries over https because I am using dnscryptproxy on system. 
         Enabled = false;
         Locked = true;

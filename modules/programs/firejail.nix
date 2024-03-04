@@ -16,5 +16,9 @@
           executable = "${pkgs.lib.getBin pkgs.chromium}/bin/chromium";
           profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
       };
+      firefox = {
+          executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
+          profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+      };
   }; 
 }
