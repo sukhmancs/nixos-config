@@ -60,6 +60,12 @@
           "override_update_url" = true;
           "update_url" = "https://clients2.google.com/service/update2/crx";
         };
+        "eimadpbcbfnmbkopoojfekhnkhdbieeh" = { # dark reader
+          "installation_mode" = "force_installed";
+          "override_update_url" = true;
+          "update_url" = "https://clients2.google.com/service/update2/crx";
+        };
+
         "hnmpcagpplmpfojmgmnngilcnanddlhb" = { # Windscribe
           "installation_mode" = "allowed";
         };
