@@ -63,6 +63,9 @@
         "hnmpcagpplmpfojmgmnngilcnanddlhb" = { # Windscribe
           "installation_mode" = "allowed";
         };
+        "hobjkcpmjhlegmobgonaagepfckjkceh" = { # Codeium
+          "installation_mode" = "allowed";
+        };
       };
     };
   };
