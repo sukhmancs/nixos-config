@@ -15,7 +15,7 @@
   ./eww.nix
   ./flatpak.nix
   ./firefox.nix
-  ./chromium.nix
+  ./chromium_policies.nix
   ./rofi.nix
   ./waybar.nix
   ./wofi.nix

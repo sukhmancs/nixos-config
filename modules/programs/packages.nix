@@ -19,6 +19,7 @@
       file              # Get File Information
       tree              # Print Directory Tree
       steam-run         # Run commands in the same FHS environment
+      google-chrome     # A freeware browser developed by Google
 
       # Video/Audio
       alsa-utils        # Audio Control
