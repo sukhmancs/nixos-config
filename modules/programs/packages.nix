@@ -62,6 +62,9 @@
       mailutils
       tesseract4
       tor-browser-bundle-bin
+      profile-sync-daemon    # CONFIGURE ME (check out Archlinux wiki for profile-sync-daemon)
+                             # Syncs browser profile dirs to RAM
+                             # Run command 'psd' for the first time use, then configure it in $XDG_CONFIG_HOME/psd/psd.conf
 
     #### System hardening
 
