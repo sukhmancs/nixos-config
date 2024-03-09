@@ -61,6 +61,7 @@
       xwinwrap
       mailutils
       tesseract4
+      glib                   # C library
       tor-browser-bundle-bin
       profile-sync-daemon    # CONFIGURE ME (check out Archlinux wiki for profile-sync-daemon)
                              # Syncs browser profile dirs to RAM
