@@ -24,6 +24,14 @@
       "DefaultGeolocationSetting" = 3;         # Ask the user when site want to track user location
       "DefaultLocalFontsSetting" = 2;
       "DeviceAutoUpdateDisabled" = true;       # Disable auto update
+      "DefaultFileSystemWriteGuardSetting" = 2; # Do not allow any site to request write access to files or directories on host computer
+      "HelpMeWriteSettings" = 1;
+      "AllowDeletingBrowserHistory" = true;
+      "DownloadDirectory" = "~/Downloads/Chrome/";
+      "SavingBrowserHistoryDisabled" = true;
+      "SafeSitesFilterBehavior" = 1;
+      "AccessibilityShortcutsEnabled" = false;
+      "HomepageIsNewTabPage" = true;
       ExtensionSettings = {
         "*" = {
           "allowed_types" = [
@@ -70,6 +78,15 @@
           "installation_mode" = "allowed";
         };
         "hobjkcpmjhlegmobgonaagepfckjkceh" = { # Codeium
+          "installation_mode" = "allowed";
+        };
+        "glofmiecpjdembddjpblegeghejfjnab" = { # Awesome Anime Theme
+          "installation_mode" = "allowed";
+        };
+        "lgpgimkhbokanggfjjafplmjcdoclifl" = { # Anime Live Wallpapers
+          "installation_mode" = "allowed";
+        };
+        "ppmcbemphmekpnpbddecgkbemenginpf" = { # Dreamy - Anime HD New Tab Sharing App
           "installation_mode" = "allowed";
         };
       };

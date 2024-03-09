@@ -116,7 +116,7 @@
       };
       BlockAboutConfig = true;                                      # Disable access to about:config page
       BlockAboutSupport = true;
-      BlockAboutProfiles = true;
+#      BlockAboutProfiles = true;
       BlockAboutAddons = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
