@@ -1,4 +1,7 @@
+#
+# VSCode-insider
 # enable and customize vscode for current user
+#
 { pkgs, vars, ... }:
 
 {
@@ -23,7 +26,10 @@
       jnoortheen.nix-ide
       ms-python.python
       ];
-      userSettings = {"files.autoSave" = "on";};
+      userSettings = {
+        "files.autoSave" = "on";
+        "explorer.compactFolders" = false;
+      };
     };   
   };
 }

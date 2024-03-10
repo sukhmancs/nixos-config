@@ -10,3 +10,6 @@ ipykernel
 jupyterlab
 XlsxWriter
 beautifulsoup4
+notebook
+transformers
+datasets
