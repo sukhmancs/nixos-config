@@ -66,6 +66,20 @@
     ];
   };
 
+
+  services = {                            # Extra config options for systemd-logind
+    logind = {
+      extraConfig = ''
+        IdleAction=lock 
+        Audit=yes 
+        NAutoVTs=6 
+        ReserveVT=6 
+        IdleActionSec=30min 
+        RuntimeDirectorySize=30%
+      '';
+    };
+  };
+
   #hardware.facetimehd.enable = true;        # facetimehd support for macbook Facetime HD camera
 
   programs.light.enable = true;             # Monitor Brightness
