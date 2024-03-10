@@ -29,6 +29,8 @@
       userSettings = {
         "files.autoSave" = "on";
         "explorer.compactFolders" = false;
+        "update.showReleaseNotes" = false;
+        "update.mode" = "none";
       };
     };   
   };
