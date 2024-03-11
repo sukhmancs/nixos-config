@@ -75,7 +75,7 @@
         NAutoVTs=6 
         ReserveVT=6 
         IdleActionSec=30min 
-        RuntimeDirectorySize=30%
+        RuntimeDirectorySize=40%
       '';
     };
   };

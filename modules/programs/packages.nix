@@ -63,10 +63,7 @@
       tesseract4
       glib                   # C library
       tor-browser-bundle-bin
-      profile-sync-daemon    # CONFIGURE ME (check out Archlinux wiki for profile-sync-daemon)
-                             # Syncs browser profile dirs to RAM
-                             # Run command 'psd' for the first time use, then configure it in $XDG_CONFIG_HOME/psd/psd.conf
-
+      profile-sync-daemon    # Sync Browser profiles to tmpfs (enable systemd.psd.service as well)
     #### System hardening
 
       #chkrootkit         # Scan for any rootkits
