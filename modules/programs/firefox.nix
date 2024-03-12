@@ -114,12 +114,19 @@
         MoreFromMozilla = false;
         Locked = false;
       };
+      GoToIntranetSiteForSingleWordEntryInAddressBar = true;
       BlockAboutConfig = true;                                      # Disable access to about:config page
       BlockAboutSupport = true;
 #      BlockAboutProfiles = true;
       BlockAboutAddons = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
+      DisablePocket = true;
+      DisableSafeMode = true;
+      DisableSecurityBypass = {
+        InvalidCertificate = true;
+        SafeBrowsing = true;
+      };
       CaptivePortal = false;
       DontCheckDefaultBrowser = true;
       DisplayMenuBar = "never";
