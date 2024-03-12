@@ -25,6 +25,7 @@
   ./packages.nix
   ./nix_index.nix
   ./nix_alien.nix
+  ./pcloud.nix
   #./opensnitch.nix
   #./games.nix
 ]
