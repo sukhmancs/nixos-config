@@ -19,7 +19,7 @@
             ''
               PATH=$PATH:${lib.makeBinPath [ pkgs.dunst pkgs.megasync pkgs.networkmanagerapplet pkgs.chkrootkit pkgs.pcloud pkgs.goldendict-ng ]}
 
-            ${pkgs.bash}/bin/bash "/home/sukhman/.nixos-config/modules/programs/startup_commands.sh";  	
+            ${pkgs.bash}/bin/bash "./startup_commands.sh";  	
             ''
   	);
         };
