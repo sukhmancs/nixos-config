@@ -25,5 +25,6 @@
   ./startup_service.nix
   ./polkit_service.nix
   ./psd.nix
+  ./vastai_certificates.nix
 ]
 
