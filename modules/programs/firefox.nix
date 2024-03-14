@@ -132,6 +132,9 @@
       DisplayMenuBar = "never";
       DisableTelemetry = true;
       DownloadDirectory = "~/Downloads/Firefox";
+      Certificates = { # Certificate for vast.ai
+        Install = ["./certificates/jvastai_root.cer"];
+    };
       WebsiteFilter = {
           Block = ["file://*/*"];
           #Exceptions = ["http://example.org/*"];
