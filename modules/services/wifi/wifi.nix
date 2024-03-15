@@ -14,6 +14,12 @@
     networkmanager.dns = "none"; 
   };
 
+  programs = {
+    nm-applet = {
+      enable = true;
+    };
+  };
+
   # Setup DNS proxy client
   services.dnscrypt-proxy2 = {
     enable = true;
