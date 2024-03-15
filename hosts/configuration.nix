@@ -85,6 +85,30 @@
   programs = {
     dconf.enable = true;
   };
+
+  pcloud.enable = true;                     # Enable pcloud
+
+  firefox-with-policies.enable = true;      # Enable firefox with enterprise policies
+
+  nix-index-cnf.enable = true;              # Nix-index with command-not-found script
+
+  nix-ld.enable = true;                     # nix-ld
+
+  firejail.enable = true;                   # Sandbox
+
+  chromium-policies.enable = true;          # Enable chromium enterprise policies
+
+  vscode-custom.enable = true;              # vscode with custom settings and extensions
+
+  clamav.enable = true;                     # Antivirus
+
+  psd.enable = true;                        # profile-sync-daemon
+
+  polkit-agent.enable = true;               # enable polkit_gnome polkit agent for better interface for polkit daemon
+
+  wifi.enable = true;                       # Wifi - Setup Network manager with dnscrypt-proxy client. It also configures fail to ban and Network Manager applet
+
+  certificates.enable = true;               # Enable system-wide certificates eg, for vast.ai
  
   services = {
     printing = {                            # CUPS
