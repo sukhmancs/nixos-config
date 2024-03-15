@@ -22,7 +22,7 @@
   ./clamav.nix
   ./media.nix
   ./mime_types.nix
-  ./startup_service.nix
+  #./startup_service.nix
   ./polkit_service.nix
   ./psd.nix
   ./vastai_certificates.nix

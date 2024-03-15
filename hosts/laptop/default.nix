@@ -60,7 +60,7 @@
       simple-scan       # Scanning
       onlyoffice-bin    # Office
       kazam             # Recording
-      unityhub
+#      unityhub
       virtiofsd         # Needed for shared folder setup in virt-manager
       goldendict-ng     # Dictionary - Ctrl + C, C to open dictionary lookup
     ];

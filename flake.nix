@@ -13,17 +13,23 @@
 
   inputs =                                                                  # References Used by Flake
     {      
-      nixpkgs.url = "github:nixos/nixpkgs/release-23.11";                   # Stable Nix Packages (Default)
-      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";         # Unstable
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";                     # Nix Packages (Default)
+      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";         # Unstable Nix Packages
+      nixos-hardware.url = "github:nixos/nixos-hardware/master";            # Hardware Specific Configurations
 
       home-manager = {                                                      # User Environment Manager
         url = "github:nix-community/home-manager/release-23.11";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
+      home-manager-unstable = {                                             # Unstable User Environment Manager
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
       darwin = {                                                            # MacOS Package Management
         url = "github:lnl7/nix-darwin/master";
-        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
       nur = {                                                               # NUR Community Packages
@@ -33,6 +39,16 @@
       nixgl = {                                                             # Fixes OpenGL With Other Distros.
         url = "github:guibou/nixGL";
         inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+      nixvim = {                                                            # Neovim
+        url = "github:nix-community/nixvim/nixos-23.11";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+      nixvim-unstable = {                                                            # Neovim
+        url = "github:nix-community/nixvim";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
       emacs-overlay = {                                                     # Emacs Overlays
@@ -51,11 +67,21 @@
         inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
+      hyprlock = {
+        url = "github:hyprwm/hyprlock";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
+      hypridle = {
+        url = "github:hyprwm/hypridle";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
       plasma-manager = {                                                    # KDE Plasma User Settings Generator
-        url = "github:pjones/plasma-manager";                               # Requires "inputs.plasma-manager.homeManagerModules.plasma-manager" to be added to the home-manager.users.${user}.imports
+        url = "github:pjones/plasma-manager";
         inputs.nixpkgs.follows = "nixpkgs";
         inputs.home-manager.follows = "nixpkgs";
-      };
+      }; 
       
       nix-ld-rs = {                                                         # Run unpatched dynamic binaries on NixOS 
         url = "github:nix-community/nix-ld-rs";
@@ -63,12 +89,12 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, darwin, nur, nixgl, doom-emacs, hyprland, plasma-manager, nix-ld-rs, ... }:   # Function telling flake which inputs to use
-    let
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, home-manager-unstable, darwin, nur, nixgl, nixvim, nixvim-unstable, doom-emacs, hyprland, hyprlock, hypridle, plasma-manager, nix-ld-rs, ... }:   # Function telling flake which inputs to use
+      let
       vars = {                                                              # Variables Used In Flake
         user = "sukhman";
         location = "$HOME/.setup";
-        terminal = "alacritty";
+        terminal = "kitty";
         editor = "nvim";
       };
     in
@@ -76,14 +102,14 @@
       nixosConfigurations = (                                               # NixOS Configurations
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-unstable home-manager nur doom-emacs hyprland plasma-manager nix-ld-rs vars;   # Inherit inputs
+          inherit inputs nixpkgs nixpkgs-unstable nixos-hardware home-manager nur nixvim doom-emacs hyprland hyprlock hypridle plasma-manager nix-ld-rs vars;   # Inherit inputs
         }
       );
 
       darwinConfigurations = (                                              # Darwin Configurations
         import ./darwin {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-unstable home-manager darwin vars;
+          inherit inputs nixpkgs-unstable home-manager-unstable darwin nixvim-unstable vars;
         }
       );
 

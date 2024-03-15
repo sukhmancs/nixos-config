@@ -48,7 +48,6 @@
       bleachbit         # A program to free up disk space
 
       # My Packages
-      networkmanagerapplet
       neofetch
       tldr
       discord
@@ -62,12 +61,12 @@
       mailutils
       tesseract4
       glib                   # C library
-      tor-browser-bundle-bin
-      profile-sync-daemon    # Sync Browser profiles to tmpfs (enable systemd.psd.service as well)
-    #### System hardening
+#      tor-browser-bundle-bin
+      keepass
+
+      #### System hardening
 
       #chkrootkit         # Scan for any rootkits
-      clamav             # Antivirus
       vulnix             # NixOS vulnerability scanner
       lynis              # Security auditing tool
   ];

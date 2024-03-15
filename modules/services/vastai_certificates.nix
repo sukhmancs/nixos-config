@@ -1,9 +1,21 @@
 #
 # Install system-wide certificate for vast.ai
 #
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+with lib;
 {
+  options.certificates = {
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = mdDoc ''
+        Install system-wide certificate eg, for vast.ai
+      '';
+    };
+  };
+
+  config = mkIf config.certificates.enable {
   security = {
     pki = {
       certificates = [''
@@ -46,4 +58,5 @@
       ];      
     };
   };
+};
 }

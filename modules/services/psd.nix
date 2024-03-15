@@ -3,13 +3,31 @@
 # Make sure profile-sync-daemon package is installed
 #
 
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+with lib;
 {
-  services = {
-    psd = {
-      enable = true;
-      resyncTimer = "1h";
+  options.psd = {
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = mdDoc ''
+        Enable the Profile Sync Daemon
+      '';
+    };
+  };
+
+  config = mkIf config.psd.enable {
+    nixpkgs.config.allowUnfree = true;
+    environment.systemPackages = [
+      pkgs.profile-sync-daemon    # Sync Browser profiles to tmpfs (enable systemd.psd.service as well)
+    ];
+
+    services = {
+      psd = {
+        enable = true;
+        resyncTimer = "1h";
+      };
     };
   };
 }
