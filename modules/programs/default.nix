@@ -26,6 +26,9 @@
   ./nix_index.nix
   ./nix_alien.nix
   ./pcloud.nix
+  ./kitty.nix
+  ./obs.nix
+  ./accounts.nix
   #./opensnitch.nix
   #./games.nix
 ]

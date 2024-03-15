@@ -31,6 +31,7 @@
       pulseaudio        # Audio Server/Control
       vlc               # Media Player
       stremio           # Media Streamer
+      kitty
 
       # Apps
       appimage-run      # Runs AppImages on NixOS
