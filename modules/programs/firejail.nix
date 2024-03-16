@@ -2,7 +2,7 @@
 #  Firejail - Sandbox programs to give them restricted permissions
 #
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, vars, ... }:
 
 with lib;
 
@@ -48,6 +48,12 @@ let
   config = mkIf config.firejail.enable {
     # enable firejail
     programs.firejail.enable = true;
+
+    home-manager.users.${vars.user} = {
+      home.file.".config/firejail/common.inc" = {
+        source = "${fetchProfiles}/common.inc";
+      };
+    };
 
     # custom google-chrome firejail profile
     environment.etc."firejail/google-chrome.profile" = {
