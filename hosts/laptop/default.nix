@@ -21,7 +21,7 @@
   [ 
     ./hardware-configuration.nix 
     ../../modules/services/wifi/wifi.nix
-    #../../modules/profiles/nixos_hardened.nix
+    ../../modules/profiles/nixos_hardened.nix
   ] ++
   ( import ../../modules/desktops/virtualisation );
 
@@ -44,6 +44,11 @@
     kernelParams = [ "intel_iommu=on" "iommu=pt" ];
     #extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     blacklistedKernelModules = [ "bcma" ];
+  };
+
+  security.hardening = {                   # System Hardening
+    enable = true;
+    apparmor = true;
   };
 
   hardware.sane = {                         # Scanning
