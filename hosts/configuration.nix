@@ -33,9 +33,10 @@
               import ../modules/shell ++
               import ../modules/theming );
 
+  users.groups.audit = {};
   users.users.${vars.user} = {              # System User
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" "vboxusers" "audit" ];
   };
 
   time.timeZone = "America/Toronto";        # Time zone and Internationalisation

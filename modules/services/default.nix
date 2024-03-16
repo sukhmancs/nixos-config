@@ -22,6 +22,7 @@
   ./clamav.nix
   ./media.nix
   ./mime_types.nix
+  ./audit.nix
   #./startup_service.nix
   ./polkit_service.nix
   ./psd.nix

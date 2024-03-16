@@ -64,14 +64,14 @@ let
     # that will wrap the real binaries so everything
     # work out of the box.
     programs.firejail.wrappedBinaries = { 
-      google-chrome = {
-        executable = "${pkgs.lib.getBin pkgs.google-chrome}/bin/google-chrome";
-        profile = "/etc/firejail/google-chrome.profile";
-        extraArgs = [
-          # sandbox Xorg to restrict keyloggers
-          "--x11=xephyr"
-        ];
-      };
+#      google-chrome = {
+#        executable = "${pkgs.lib.getBin pkgs.google-chrome}/bin/google-chrome";
+#        profile = "/etc/firejail/google-chrome.profile";
+#        extraArgs = [
+#          # sandbox Xorg to restrict keyloggers
+#          "--x11=xephyr"
+#        ];
+#      };
       firefox = {
         executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";

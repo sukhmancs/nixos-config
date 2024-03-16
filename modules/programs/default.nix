@@ -30,6 +30,7 @@
   ./obs.nix
   ./accounts.nix
   ./gnupg.nix
+  ./apparmor.nix
   #./keepass.nix
   #./opensnitch.nix
   #./games.nix
