@@ -76,8 +76,6 @@ let
           "--env=GTK_THEME=Adwaita:dark"
           # Enable system notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
-          # sandbox Xorg to restrict keyloggers
-          "--x11=xephyr"
         ];
       };
     }; 
