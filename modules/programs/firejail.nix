@@ -23,13 +23,27 @@ with lib;
     # that will wrap the real binaries so everything
     # work out of the box.
     programs.firejail.wrappedBinaries = { 
-      chromium = {
-          executable = "${pkgs.lib.getBin pkgs.chromium}/bin/chromium";
-          profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
+      google-chrome = {
+        executable = "${pkgs.lib.getBin pkgs.google-chrome}/bin/google-chrome";
+        profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
+        extraArgs = [
+          # sandbox Xorg to restrict keyloggers
+          "--x11=xephyr"
+        ];
       };
       firefox = {
-          executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
-          profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        executable = "${pkgs.lib.getBin pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        extraArgs = [
+          # Required for U2F USB stick
+          "--ignore=private-dev"
+          # Enforce dark mode
+          "--env=GTK_THEME=Adwaita:dark"
+          # Enable system notifications
+          "--dbus-user.talk=org.freedesktop.Notifications"
+          # sandbox Xorg to restrict keyloggers
+          "--x11=xephyr"
+        ];
       };
     }; 
   };

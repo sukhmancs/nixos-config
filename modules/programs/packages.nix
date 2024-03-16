@@ -18,6 +18,8 @@
       dpkg              # Debian package manager
       file              # Get File Information
       tree              # Print Directory Tree
+      rofi-pass         # Script to make rofi work with password-store
+      pass              # Password Store password manager
       steam-run         # Run commands in the same FHS environment
       google-chrome     # A freeware browser developed by Google
 
@@ -31,7 +33,7 @@
       pulseaudio        # Audio Server/Control
       vlc               # Media Player
       stremio           # Media Streamer
-      kitty
+      mono
 
       # Apps
       appimage-run      # Runs AppImages on NixOS
@@ -63,7 +65,6 @@
       tesseract4
       glib                   # C library
 #      tor-browser-bundle-bin
-      keepass
 
       #### System hardening
 

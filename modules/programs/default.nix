@@ -29,6 +29,8 @@
   ./kitty.nix
   ./obs.nix
   ./accounts.nix
+  ./gnupg.nix
+  #./keepass.nix
   #./opensnitch.nix
   #./games.nix
 ]
