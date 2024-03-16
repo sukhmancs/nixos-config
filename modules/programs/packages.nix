@@ -24,6 +24,8 @@
       google-chrome     # A freeware browser developed by Google
       nix-prefetch-git  # fetch source hashes for git repository
       apparmor-profiles # apparmor profiles
+      qtpass
+      passExtensions.pass-import 
 
       # Video/Audio
       alsa-utils        # Audio Control

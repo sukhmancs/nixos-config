@@ -11,13 +11,33 @@ in
 {
   # AppArmor profile
   security.apparmor.policies = mkIf cfg.apparmor {
+    dis = {
+      enable = true;
+      enforce = true;
+      profile = ''
+        #include <tunables/global>
+        
+        /run/current-system/sw/bin/discord {
+          #include <abstractions/base>
+        
+            # block ipv4 acces
+            deny network inet,
+            # ipv6 
+            deny network inet6,
+            # raw socket
+            deny network raw,
+        
+            owner /** rwm,
+        }
+      '';
+    };
     discord = {
-      enable = true;  # Set to true to load the profile into the kernel
+      enable = false;  # Set to true to load the profile into the kernel
       enforce = true; # Set to true to enforce the policy, false to only complain in the logs
       profile = ''
         # Apparmor profile for discord
         #include <tunables/global>
-        ${pkgs.discord}/bin/discord/ {
+        ${pkgs.discord}/sw/bin/discord {
           #include <abstractions/X>
           #include <abstractions/audio>
           #include <abstractions/base>
@@ -36,7 +56,7 @@ in
           signal send set=term peer=discord,
         
           deny ptrace read peer=unconfined,
-        
+    
           ptrace (read,trace) peer=discord,
         
           deny /bin/dash mrx,
