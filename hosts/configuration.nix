@@ -94,7 +94,15 @@
 
   nix-ld.enable = true;                     # nix-ld
 
-  firejail.enable = true;                   # Sandbox
+  firejail = {
+    enable = true;                          # Sandbox
+    profilesGitHub = {
+      owner = "chiraag-nataraj";
+      repo = "firejail-profiles";
+      rev = "fcd08dd32874f9fb5c856375659c434c922f156a";
+      sha256 = "1w2j7bispzs0c8k8ic45m9bx6vlwddak7y829rg1j8ycqy6wazc3";
+    };
+  };
 
   chromium-policies.enable = true;          # Enable chromium enterprise policies
 

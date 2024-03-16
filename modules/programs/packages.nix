@@ -22,6 +22,7 @@
       pass              # Password Store password manager
       steam-run         # Run commands in the same FHS environment
       google-chrome     # A freeware browser developed by Google
+      nix-prefetch-git  # fetch source hashes for git repository
 
       # Video/Audio
       alsa-utils        # Audio Control
