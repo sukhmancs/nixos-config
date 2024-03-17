@@ -31,6 +31,7 @@
   ./accounts.nix
   ./gnupg.nix
   ./apparmor.nix
+  ./pass.nix
   #./keepass.nix
   #./opensnitch.nix
   #./games.nix

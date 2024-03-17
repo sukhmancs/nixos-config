@@ -78,6 +78,7 @@
 
   environment.shellAliases = {
     git-bare = "git --git-dir=$HOME/nixos-config-bare-repo/ --work-tree=/etc/nixos";
+    rp = "rofi-pass";
   };
 
   virtualisation.vmware.host.enable = true;
@@ -86,6 +87,8 @@
   programs = {
     dconf.enable = true;
   };
+
+  pass.enable = true;                       # Pass password manager with rofi-pass and other extensions enabled
 
   pcloud.enable = true;                     # Enable pcloud
 

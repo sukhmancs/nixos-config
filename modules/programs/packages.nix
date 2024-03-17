@@ -18,14 +18,10 @@
       dpkg              # Debian package manager
       file              # Get File Information
       tree              # Print Directory Tree
-      rofi-pass         # Script to make rofi work with password-store
-      pass              # Password Store password manager
       steam-run         # Run commands in the same FHS environment
       google-chrome     # A freeware browser developed by Google
       nix-prefetch-git  # fetch source hashes for git repository
       apparmor-profiles # apparmor profiles
-      qtpass
-      passExtensions.pass-import 
 
       # Video/Audio
       alsa-utils        # Audio Control
