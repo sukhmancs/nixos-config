@@ -22,14 +22,14 @@ in
 
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
-    
     environment.systemPackages = [
-      pkgs.pass
-      pkgs.pass-git-helper
-      pkgs.passExtensions.pass-otp
-      pkgs.passExtensions.pass-audit
-      pkgs.passExtensions.pass-update
-      pkgs.passExtensions.pass-import
+#      pkgs.pass
+      (pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]))
+#      pkgs.pass-git-helper
+#      pkgs.passExtensions.pass-otp
+#      pkgs.passExtensions.pass-audit
+#      pkgs.passExtensions.pass-update
+#      pkgs.passExtensions.pass-import
       pkgs.qtpass
       pkgs.pwgen
       pkgs.rofi-pass
