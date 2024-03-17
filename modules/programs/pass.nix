@@ -39,7 +39,12 @@ in
       home.file.".config/rofi-pass" = {
         source = ./rofi-pass;
         recursive = true;
-      };    
+      };
+
+      home.file.".config/pass-git-helper" = {
+        source = ./git-pass-mapping;
+        recursive = true;
+      };
     };
   };
 }
