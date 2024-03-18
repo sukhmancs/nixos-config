@@ -43,12 +43,12 @@ in
         '';
         swtpm.enable = true;
       };
-      hooks.qemu = { 
-        alloc_hugepages = allocHugepagesPath; 
-        dealloc_huge_pages = deallocHugepagesPath; 
-        cpu_mode_performance = cpuModePerformance;
-        cpu_mode_ondemand = cpuModeOndemand;
-      };
+#      hooks.qemu = { # Before you uncomment this, make sure to check how much hugepages is being allocated in the allocHugepagesPath bash script  
+#        alloc_hugepages = allocHugepagesPath; 
+#        dealloc_huge_pages = deallocHugepagesPath; 
+#        cpu_mode_performance = cpuModePerformance;
+#        cpu_mode_ondemand = cpuModeOndemand;
+#      };
     };
     spiceUSBRedirection.enable = true;
   };

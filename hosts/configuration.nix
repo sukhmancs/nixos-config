@@ -121,6 +121,7 @@
   wifi.enable = true;                       # Wifi - Setup Network manager with dnscrypt-proxy client. It also configures fail to ban and Network Manager applet
 
   certificates.enable = true;               # Enable system-wide certificates eg, for vast.ai
+  sysctl.enable = true;                     # Kernel Parameters using sysctl
 
   services = {
     printing = {                            # CUPS
