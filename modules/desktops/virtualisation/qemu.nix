@@ -14,6 +14,16 @@ let
     url = "https://raw.githubusercontent.com/bryansteiner/gpu-passthrough-tutorial/master/kvm/hooks/release/end/dealloc_hugepages.sh";
     sha256 = "19hix5blww1lvyi110fvgg74rbj5zylpsn72nidcaggnyh1q6y39";
   };
+
+  cpuModePerformance = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/bryansteiner/gpu-passthrough-tutorial/master/kvm/hooks/prepare/begin/cpu_mode_performance.sh";
+    sha256 = "1xhnbvcabb2l1m53s9l31gfssdw1sx2ismdr3fnn3kvwbbxd05f6";
+  };
+
+  cpuModeOndemand = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/bryansteiner/gpu-passthrough-tutorial/master/kvm/hooks/release/end/cpu_mode_ondemand.sh";
+    sha256 = "1cb7ap6vdq8pbsfadcg62rri2dzn3dqdjxh7r4nx840via95hkb0";
+  };
 in
 {
   boot.extraModprobeConfig = ''
@@ -36,6 +46,8 @@ in
       hooks.qemu = { 
         alloc_hugepages = allocHugepagesPath; 
         dealloc_huge_pages = deallocHugepagesPath; 
+        cpu_mode_performance = cpuModePerformance;
+        cpu_mode_ondemand = cpuModeOndemand;
       };
     };
     spiceUSBRedirection.enable = true;
