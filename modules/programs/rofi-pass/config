@@ -25,10 +25,10 @@ _image_viewer () {
 
 # If for some reason, you cannot do this, you can set the command here.
 # and set fix_layout to true
-fix_layout=false
+fix_layout=true
 
 layout_cmd () {
-  setxkbmap us
+  setxkbmap dvorak
 }
 
 # fields to be used

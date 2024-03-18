@@ -47,9 +47,11 @@
   };
 
   security.hardening = {                   # System Hardening
-    enable = true;
-    apparmor = true;
+    enable = false;
+    apparmor = false;
   };
+
+  programs.adb.enable = true;
 
   hardware.sane = {                         # Scanning
     enable = true;

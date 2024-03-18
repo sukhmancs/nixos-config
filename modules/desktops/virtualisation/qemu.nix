@@ -4,6 +4,17 @@
 
 { config, pkgs, vars, ... }:
 
+let
+  allocHugepagesPath = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/bryansteiner/gpu-passthrough-tutorial/master/kvm/hooks/prepare/begin/alloc_hugepages.sh";
+    sha256 = "0gc2vssmlwjgi564x4zny59jqzgivwqax7nxgaffxhxg6axzvrf7";
+  };
+
+  deallocHugepagesPath = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/bryansteiner/gpu-passthrough-tutorial/master/kvm/hooks/release/end/dealloc_hugepages.sh";
+    sha256 = "19hix5blww1lvyi110fvgg74rbj5zylpsn72nidcaggnyh1q6y39";
+  };
+in
 {
   boot.extraModprobeConfig = ''
     options kvm_intel nested=1
@@ -21,6 +32,10 @@
          nvram = [ "${pkgs.OVMF}/FV/OVMF.fd:${pkgs.OVMF}/FV/OVMF_VARS.fd" ]
         '';
         swtpm.enable = true;
+      };
+      hooks.qemu = { 
+        alloc_hugepages = allocHugepagesPath; 
+        dealloc_huge_pages = deallocHugepagesPath; 
       };
     };
     spiceUSBRedirection.enable = true;

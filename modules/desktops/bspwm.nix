@@ -77,7 +77,7 @@ in
 
         layout = "us";
         xkbVariant = "dvorak";
-        xkbOptions = "eurosign:e";
+        xkbOptions = "terminate:ctrl_alt_bksp";
         libinput = {
           enable = true;
           touchpad = {
