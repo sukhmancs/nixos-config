@@ -30,7 +30,7 @@ in
 #    ];
 
   home-manager.users.${vars.user} = {
-    programs = {
+    programs = { # password-store pass
       password-store = {
         enable = true;
         package = pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]);
@@ -43,10 +43,16 @@ in
         };
       };
 
-      rofi = {
+      rofi = {   # rofi-pass
         pass = {  
           enable = true;
         };
+      };
+    };
+
+    services = { # Enable pass to integrate with the libsecret D-Bus API for password management
+      pass-secret-service = {
+        enable = true;
       };
     };
 
