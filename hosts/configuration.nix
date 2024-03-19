@@ -78,7 +78,6 @@
 
   environment.shellAliases = {
     git-bare = "git --git-dir=$HOME/nixos-config-bare-repo/ --work-tree=/etc/nixos";
-    rp = "rofi-pass";
   };
 
   virtualisation.vmware.host.enable = true;

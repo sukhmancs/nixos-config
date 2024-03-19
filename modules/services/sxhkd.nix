@@ -14,6 +14,7 @@
             # Apps
             "super + Return" = "${vars.terminal}";                # Terminal
             "super + space" = "rofi -show drun -show-icons";      # Application Menu
+            "alt + space" = "rofi-pass";                          # Password store
             "super + e" = "pcmanfm";                              # File Browser
             "Print" = "flameshot gui";                            # Screenshots
             "super + p" = "flameshot gui";

@@ -22,15 +22,35 @@ in
 
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
-    environment.systemPackages = [
-      (pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]))
-      pkgs.qtpass
-      pkgs.pwgen
-      pkgs.rofi-pass
-    ];
+#    environment.systemPackages = [
+#      (pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]))
+#      pkgs.qtpass
+#      pkgs.pwgen
+#      pkgs.rofi-pass
+#    ];
 
-    home-manager.users.${vars.user} = {
-      home.file.".config/rofi-pass" = {
+  home-manager.users.${vars.user} = {
+    programs = {
+      password-store = {
+        enable = true;
+        package = pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]);
+        settings = {
+          PASSWORD_STORE_CLIP_TIME = "30";
+          PASSWORD_STORE_GENERATED_LENGTH = "120";
+          PASSWORD_STORE_CHARACTER_SET="A-Za-z0-9!@#$%";
+          PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS="A-Za-z0-9";
+          PASSWORD_STORE_ENABLE_EXTENSIONS="true";
+        };
+      };
+
+      rofi = {
+        pass = {  
+          enable = true;
+        };
+      };
+    };
+
+    home.file.".config/rofi-pass" = {
         source = ./rofi-pass;
         recursive = true;
       };

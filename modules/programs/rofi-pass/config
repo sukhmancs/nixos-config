@@ -28,12 +28,12 @@ _image_viewer () {
 fix_layout=true
 
 layout_cmd () {
-  setxkbmap dvorak
+  setxkbmap us dvorak
 }
 
 # fields to be used
 URL_field='url'
-USERNAME_field='user'
+USERNAME_field='login'
 AUTOTYPE_field='autotype'
 
 # delay to be used for :delay keyword
