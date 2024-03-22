@@ -27,6 +27,5 @@
   ./polkit_service.nix
   ./psd.nix
   ./vastai_certificates.nix
-  ./sysctl.nix
 ]
 

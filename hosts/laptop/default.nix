@@ -20,7 +20,8 @@
   imports = 
   [ 
     ./hardware-configuration.nix 
-    ../../modules/services/wifi/wifi.nix    
+    ../../modules/services/wifi/wifi.nix   
+    ../../modules/services/sysctl.nix
   ] ++
   ( import ../../modules/desktops/virtualisation );
 
