@@ -31,6 +31,10 @@
         "explorer.compactFolders" = false;
         "update.showReleaseNotes" = false;
         "update.mode" = "none";
+        "github.copilot.enable" = {
+          "markdown" = "true";
+          "plaintext" = "true";
+        };
       };
     };   
   };
