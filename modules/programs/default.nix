@@ -32,6 +32,7 @@
   ./gnupg.nix
   ./apparmor.nix
   ./pass.nix
+  ./rofi-pass.nix
   #./keepass.nix
   #./opensnitch.nix
   #./games.nix

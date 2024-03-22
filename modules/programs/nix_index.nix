@@ -18,30 +18,17 @@
 
 { config, lib, pkgs, ... }:
 
-with lib;
-{
-  options.nix-index-cnf = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = mdDoc ''
-        Nix-index with "command-not-found script"
-      '';
-    };
+{  
+  # use "command-not-found" script provided by nix-shell
+  programs.command-not-found.enable = false;
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
-  config = mkIf config.nix-index-cnf.enable {
-    # use "command-not-found" script provided by nix-shell
-    programs.command-not-found.enable = false;
-    programs.nix-index = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-  
-    # for home-manager, use programs.bash.initExtra instead
-    #  programs.zsh.interactiveShellInit =
-    #  ''
-    #    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-    #  '';
-  };
+  # for home-manager, use programs.bash.initExtra instead
+  #  programs.zsh.interactiveShellInit =
+  #  ''
+  #    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  #  '';
 }

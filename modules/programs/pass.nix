@@ -4,24 +4,8 @@
 
 { config, lib, pkgs, vars, ... }:
 
-with lib;
-
-let
-  cfg = config.pass;
-in
 {
-  options.pass = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = mdDoc ''
-        pass - Password Store password manager with rofi-pass support and other extensions
-      '';
-    };
-  };
-
-  config = mkIf cfg.enable {
-    nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 #    environment.systemPackages = [
 #      (pkgs.pass.withExtensions (exts: [ exts.pass-otp exts.pass-audit exts.pass-update exts.pass-import]))
 #      pkgs.qtpass
@@ -44,12 +28,6 @@ in
           PASSWORD_STORE_ENABLE_EXTENSIONS="true";
         };
       };
-
-      rofi = {   # rofi-pass
-        pass = {  
-          enable = true;
-        };
-      };
     };
 
     services = { # Enable pass to integrate with the libsecret D-Bus API for password management
@@ -58,15 +36,9 @@ in
       };
     };
 
-    home.file.".config/rofi-pass" = {
-        source = ./rofi-pass;
-        recursive = true;
-      };
-
-      home.file.".config/pass-git-helper" = {
-        source = ./git-pass-mapping;
-        recursive = true;
-      };
+    home.file.".config/pass-git-helper" = {
+      source = ./git-pass-mapping;
+      recursive = true;
     };
   };
 }

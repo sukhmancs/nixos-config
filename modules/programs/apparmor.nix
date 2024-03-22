@@ -4,13 +4,14 @@
 
 { config, lib, pkgs, ... }:
 
-with lib;
 let
-  cfg = config.security.hardening;
+  getLib = lib.getLib;
 in
 {
+  security.apparmor.enable = true;
+
   # AppArmor profile
-  security.apparmor.policies = mkIf cfg.apparmor {
+  security.apparmor.policies = {
     dis = {
       enable = true;
       enforce = true;
@@ -31,89 +32,89 @@ in
         }
       '';
     };
-    discord = {
-      enable = false;  # Set to true to load the profile into the kernel
-      enforce = true; # Set to true to enforce the policy, false to only complain in the logs
-      profile = ''
-        # Apparmor profile for discord
-        #include <tunables/global>
-        ${pkgs.discord}/sw/bin/discord {
-          #include <abstractions/X>
-          #include <abstractions/audio>
-          #include <abstractions/base>
-          #include <abstractions/consoles>
-          #include <abstractions/dbus-session-strict>
-          #include <abstractions/dbus-strict>
-          #include <abstractions/fonts>
-          #include <abstractions/freedesktop.org>
-          #include <abstractions/nameservice>
-          #include <abstractions/user-tmp>
+    # discord = {
+    #   enable = false;  # Set to true to load the profile into the kernel
+    #   enforce = true; # Set to true to enforce the policy, false to only complain in the logs
+    #   profile = ''
+    #     # Apparmor profile for discord
+    #     #include <tunables/global>
+    #     ${pkgs.discord}/sw/bin/discord {
+    #       #include <abstractions/X>
+    #       #include <abstractions/audio>
+    #       #include <abstractions/base>
+    #       #include <abstractions/consoles>
+    #       #include <abstractions/dbus-session-strict>
+    #       #include <abstractions/dbus-strict>
+    #       #include <abstractions/fonts>
+    #       #include <abstractions/freedesktop.org>
+    #       #include <abstractions/nameservice>
+    #       #include <abstractions/user-tmp>
         
-          capability sys_admin,
-          capability sys_chroot,
-          capability sys_ptrace,
+    #       capability sys_admin,
+    #       capability sys_chroot,
+    #       capability sys_ptrace,
         
-          signal send set=term peer=discord,
+    #       signal send set=term peer=discord,
         
-          deny ptrace read peer=unconfined,
+    #       deny ptrace read peer=unconfined,
     
-          ptrace (read,trace) peer=discord,
+    #       ptrace (read,trace) peer=discord,
         
-          deny /bin/dash mrx,
-          deny /usr/bin/python3.6 mr,
-          deny /home/*/.pki/** w,
-          owner /home/*/.pki/** r,
+    #       deny /bin/dash mrx,
+    #       deny /usr/bin/python3.6 mr,
+    #       deny /home/*/.pki/** w,
+    #       owner /home/*/.pki/** r,
         
-          /dev/ r,
-          /etc/gtk-3.0/settings.ini r,
-          /etc/lsb-release r,
-          /etc/fstab r,
-          /home/*/bin/Discord/Discord mrix,
-          /lib/x86_64-linux-gnu/ld-*.so mr,
-          /proc/ r,
-          /proc/filesystems r,
-          /proc/self/exe mrix,
-          /proc/sys/fs/inotify/max_user_watches r,
-          /proc/sys/kernel/yama/ptrace_scope r,
-          /sys/** r,
-          /usr/bin/lsb_release Ux,
-          /usr/bin/lsb_release r,
-          /usr/bin/xdg-open Ux,
-          /usr/bin/xdg-open r,
-          /usr/share/fontconfig/conf.avail/ r,
-          /usr/share/drirc.d/00-mesa-defaults.conf r,
-          /usr/share/themes/** r,
-          /usr/share/gvfs/remote-volume-monitors/* r,
-          /usr/share/glib-2.0/schemas/gschemas.compiled r,
-          /var/cache/fontconfig/ w,
+    #       /dev/ r,
+    #       /etc/gtk-3.0/settings.ini r,
+    #       /etc/lsb-release r,
+    #       /etc/fstab r,
+    #       /home/*/bin/Discord/Discord mrix,
+    #       /lib/x86_64-linux-gnu/ld-*.so mr,
+    #       /proc/ r,
+    #       /proc/filesystems r,
+    #       /proc/self/exe mrix,
+    #       /proc/sys/fs/inotify/max_user_watches r,
+    #       /proc/sys/kernel/yama/ptrace_scope r,
+    #       /sys/** r,
+    #       /usr/bin/lsb_release Ux,
+    #       /usr/bin/lsb_release r,
+    #       /usr/bin/xdg-open Ux,
+    #       /usr/bin/xdg-open r,
+    #       /usr/share/fontconfig/conf.avail/ r,
+    #       /usr/share/drirc.d/00-mesa-defaults.conf r,
+    #       /usr/share/themes/** r,
+    #       /usr/share/gvfs/remote-volume-monitors/* r,
+    #       /usr/share/glib-2.0/schemas/gschemas.compiled r,
+    #       /var/cache/fontconfig/ w,
           
-          / r,
-          /**/ r,
+    #       / r,
+    #       /**/ r,
           
-          owner /dev/shm/.org.chromium.Chromium.* rw,
-          owner /run/user/*/dconf/user r,
-          owner /home/*/.Xauthority r,
-          owner /home/*/.cache/mesa_shader_cache/* rwk,
-          owner /home/*/.cache/fontconfig/* rw,
-          owner /home/*/.cache/fontconfig/* wl,
-          owner /home/*/.config/discord/** mrwk,
-          owner /home/*/.config/user-dirs.dirs r,
-          owner /home/*/.config/gtk-3.0/bookmarks r,
-          owner /home/*/#[0-9]* mrw,
-          owner /home/*/bin/Discord/** r,
-          owner /home/*/bin/Discord/**.so mr,
-          owner /proc/*/{clear_refs,gid_map,setgroups,uid_map} w,
-          owner /proc/*/{cmdline,fd/,maps,stat,statm,status,task/,mounts,mountinfo} r,
-          owner /proc/*/task/*/status r,
+    #       owner /dev/shm/.org.chromium.Chromium.* rw,
+    #       owner /run/user/*/dconf/user r,
+    #       owner /home/*/.Xauthority r,
+    #       owner /home/*/.cache/mesa_shader_cache/* rwk,
+    #       owner /home/*/.cache/fontconfig/* rw,
+    #       owner /home/*/.cache/fontconfig/* wl,
+    #       owner /home/*/.config/discord/** mrwk,
+    #       owner /home/*/.config/user-dirs.dirs r,
+    #       owner /home/*/.config/gtk-3.0/bookmarks r,
+    #       owner /home/*/#[0-9]* mrw,
+    #       owner /home/*/bin/Discord/** r,
+    #       owner /home/*/bin/Discord/**.so mr,
+    #       owner /proc/*/{clear_refs,gid_map,setgroups,uid_map} w,
+    #       owner /proc/*/{cmdline,fd/,maps,stat,statm,status,task/,mounts,mountinfo} r,
+    #       owner /proc/*/task/*/status r,
         
-          owner /run/user/*/discord-ipc-0 w,
-          owner /usr/local/share/fonts/** rw,
-          owner /usr/share/fonts/** rw,
-          owner /usr/share/javascript/*/fonts/** rw,
-          owner /usr/share/poppler/cMap/** rw,
-        }
-      '';
-    };
+    #       owner /run/user/*/discord-ipc-0 w,
+    #       owner /usr/local/share/fonts/** rw,
+    #       owner /usr/share/fonts/** rw,
+    #       owner /usr/share/javascript/*/fonts/** rw,
+    #       owner /usr/share/poppler/cMap/** rw,
+    #     }
+    #   '';
+    # };
 
     transmission = {
       enable = true;  # Set to true to load the profile into the kernel

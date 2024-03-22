@@ -23,10 +23,10 @@ with lib;
   };
 
   config = mkIf config.certificates.enable {
-  security = {
-    pki = {
-      certificateFiles = [ config.certificates.certificateFile ];
+    security = {
+      pki = {
+        certificateFiles = [ config.certificates.certificateFile ];
+      };
     };
   };
-};
 }

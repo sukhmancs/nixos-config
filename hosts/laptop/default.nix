@@ -20,8 +20,7 @@
   imports = 
   [ 
     ./hardware-configuration.nix 
-    ../../modules/services/wifi/wifi.nix
-    ../../modules/profiles/nixos_hardened.nix
+    ../../modules/services/wifi/wifi.nix    
   ] ++
   ( import ../../modules/desktops/virtualisation );
 
@@ -44,11 +43,6 @@
     kernelParams = [ "intel_iommu=on" "iommu=pt" ];
     #extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     blacklistedKernelModules = [ "bcma" ];
-  };
-
-  security.hardening = {                   # System Hardening
-    enable = false;
-    apparmor = false;
   };
 
   programs.adb.enable = true;

@@ -5,29 +5,16 @@
 
 { config, lib, pkgs, ... }:
 
-with lib;
 {
-  options.psd = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = mdDoc ''
-        Enable the Profile Sync Daemon
-      '';
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = [
+    pkgs.profile-sync-daemon    # Sync Browser profiles to tmpfs (enable systemd.psd.service as well)
+  ];
 
-  config = mkIf config.psd.enable {
-    nixpkgs.config.allowUnfree = true;
-    environment.systemPackages = [
-      pkgs.profile-sync-daemon    # Sync Browser profiles to tmpfs (enable systemd.psd.service as well)
-    ];
-
-    services = {
-      psd = {
-        enable = true;
-        resyncTimer = "1h";
-      };
+  services = {
+    psd = {
+      enable = true;
+      resyncTimer = "1h";
     };
   };
 }
