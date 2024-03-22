@@ -67,7 +67,6 @@
       glib                   # C library
 #      tor-browser-bundle-bin
       projectlibre        # MS Project alternative
-      notion-app-enhanced # Notion client with notion enhancer for linux
 
       #### System hardening
 
