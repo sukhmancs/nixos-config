@@ -65,7 +65,7 @@
       mailutils
       tesseract4
       glib                   # C library
-#      tor-browser-bundle-bin
+      tor-browser-bundle-bin
       projectlibre        # MS Project alternative
 
       #### System hardening

@@ -14,6 +14,7 @@
 
 [
   #./docker.nix
-  ./qemu.nix
+#  ./qemu.nix
+  ./vfio.nix
   #./x11vnc.nix
 ]
