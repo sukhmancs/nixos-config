@@ -101,6 +101,7 @@
 
   certificates.enable = true;               # Enable system-wide certificates eg, for vast.ai
 
+  hardware.pulseaudio.enable = false;
   services = {
     printing = {                            # CUPS
       enable = true;
@@ -113,6 +114,13 @@
       };
       pulse.enable = true;
       jack.enable = true;
+    };
+    openssh = {                             # SSH
+      enable = true;
+      allowSFTP = true;                     # SFTP
+      extraConfig = ''
+        HostKeyAlgorithms +ssh-rsa
+      '';
     };
   };
 
