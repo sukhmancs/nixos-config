@@ -1,1 +1,1 @@
-check for any random placements of let in for example river.nix
+configure and setup vfio.nix file in modules/desktops/virtualisation/vfio.nix

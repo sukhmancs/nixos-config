@@ -67,6 +67,8 @@
       glib                   # C library
       tor-browser-bundle-bin
       projectlibre        # MS Project alternative
+      easyeffects         # Limiter, compressor, equalizer, auto valume for pipewire applications
+      taisei              # taisei project game
 
       #### System hardening
 

@@ -1,5 +1,6 @@
 #
-# Virtualisation with gpu passthrough
+# Virtualisation with gpu passthrough, only enable this once u have passthrough pci ids and have a GPU
+# Follow this to understand GPU-passthrough "https://github.com/bryansteiner/gpu-passthrough-tutorial?"
 #
 
 { config
@@ -189,6 +190,16 @@ in {
     };
     virtualisation.spiceUSBRedirection.enable = true;
     users.groups.libvirtd.members = [ "root" ] ++ cfg.libvirtdGroup;
-    environment.systemPackages = [ (pkgs.virtiofsd_ccache or pkgs.virtiofsd) ];
+    environment.systemPackages = with pkgs; [ 
+      virtiofsd
+      looking-glass-client # For KVM
+      virt-manager    # VM Interface
+      virt-viewer     # Remote VM
+      qemu            # Virtualizer
+      OVMF            # UEFI Firmware
+      gvfs            # Shared Directory
+      swtpm           # TPM
+      virglrenderer   # Virtual OpenGL
+    ];
   };
 }
