@@ -122,10 +122,10 @@
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
       DisablePocket = true;
-      DisableSafeMode = true;
+      DisableSafeMode = false;
       DisableSecurityBypass = {
-        InvalidCertificate = true;
-        SafeBrowsing = true;
+        InvalidCertificate = false;
+        SafeBrowsing = false;
       };
       CaptivePortal = false;
       DontCheckDefaultBrowser = true;
@@ -134,7 +134,7 @@
       DownloadDirectory = "~/Downloads/Firefox";
       Certificates = { # Certificate for vast.ai
         Install = ["./certificates/jvastai_root.cer"];
-    };
+      };
       WebsiteFilter = {
           Block = ["file://*/*"];
           #Exceptions = ["http://example.org/*"];
@@ -186,6 +186,44 @@
         URL = "about:home";
         Locked = true;
         StartPage = "previous-session";
+      };
+      NetworkPrediction = false; # stop network prefeching
+      OverridePostUpdatePage = ""; # do not show any page after firefox upgrade
+      PDFjs = { # enable default firefox pdf viewer
+        Enabled = true;
+        EnablePermissions = true; # owner documents permissions
+      };
+      Permissions = {
+        Camera = {
+#          Allow = ["https://example.org","https://example.org:1234"];
+#          Block = ["https://example.edu"];
+          BlockNewRequests = true;
+          Locked = true;
+        };
+        Microphone = {
+#          Allow = ["https://example.org"];
+#          Block = ["https://example.edu"];
+          BlockNewRequests = true;
+          Locked = true;
+        };
+        Location = {
+          Allow = ["https://maps.google.com/"];
+#          Block = ["https://example.edu"];
+          BlockNewRequests = true;
+          Locked = true;
+        };
+        Notifications = {
+#          Allow = ["https://example.org"];
+#          Block = ["https://example.edu"];
+          BlockNewRequests = true;
+          Locked = true;
+        };
+        Autoplay = {
+#          Allow = ["https://example.org"];
+#          Block = ["https://example.edu"];
+          Default = "block-audio-video";
+          Locked = true;
+        };
       };
     };
   };  
