@@ -4,6 +4,12 @@
 { config, lib, pkgs, vars, ... }:
 
 with lib;
+let
+  vastAICertificateFilePath = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/sukhmancs/nixos-config/main/modules/services/certificates/jvastai_root.cer?token=GHSAT0AAAAAACNNH7DGI4QLXGE6SZBIIF74ZQAMVZQ";
+    sha256 = "1criip3mqn6lggdsv91s6n45gbpcpdh27gxiijvhjydwf8aclm7h";
+  };
+in
 {
   options.certificates = {
     enable = mkOption {
@@ -15,7 +21,7 @@ with lib;
     };
     certificateFile = mkOption {
       type = types.path;
-      default = "/home/${vars.user}/.nixos-config/modules/services/certificates/jvastai_root.cer";
+      default = vastAICertificateFilePath;
       description = mdDoc ''
         Path to the certificate file.
       '';
