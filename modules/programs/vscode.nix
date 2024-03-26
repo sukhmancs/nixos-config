@@ -30,6 +30,8 @@
         "files.autoSave" = "on";
         "explorer.compactFolders" = false;
         "update.showReleaseNotes" = false;
+        "explorer.confirmDragAndDrop" = false;
+        "workbench.startupEditor" = "none";
         "update.mode" = "none";
         "github.copilot.enable" = {
           "markdown" = "true";
