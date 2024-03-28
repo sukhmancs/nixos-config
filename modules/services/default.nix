@@ -28,5 +28,6 @@
   ./psd.nix
   ./vastai_certificates.nix
   ./firewall.nix
+  ./pam.nix
 ]
 

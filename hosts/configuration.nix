@@ -118,6 +118,9 @@
     openssh = {                             # SSH
       enable = true;
       allowSFTP = true;                     # SFTP
+      settings = {                          # Deny root logins
+        PermitRootLogin = "no";
+      };
       extraConfig = ''
         HostKeyAlgorithms +ssh-rsa
       '';
