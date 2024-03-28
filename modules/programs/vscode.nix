@@ -33,6 +33,7 @@
         "explorer.confirmDragAndDrop" = false;
         "workbench.startupEditor" = "none";
         "update.mode" = "none";
+        "security.workspace.trust.untrustedFiles" = "open";
         "github.copilot.enable" = {
           "markdown" = "true";
           "plaintext" = "true";
