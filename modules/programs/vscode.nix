@@ -34,6 +34,7 @@
         "workbench.startupEditor" = "none";
         "update.mode" = "none";
         "security.workspace.trust.untrustedFiles" = "open";
+        "terminal.integrated.defaultProfile.linux" = "zsh";
         "github.copilot.enable" = {
           "markdown" = "true";
           "plaintext" = "true";
