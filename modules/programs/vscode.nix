@@ -40,6 +40,18 @@
           "plaintext" = "true";
         };
       };
+      keybindings = [
+        {
+          key = "ctrl+c";
+          command = "editor.action.clipboardCopyAction";
+          when = "textInputFocus";
+        }
+        {
+          key = "shift+enter";
+          command = "jupyter.execSelectionInteractive";
+          when = "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'";
+        }
+      ];
     };   
   };
 }
