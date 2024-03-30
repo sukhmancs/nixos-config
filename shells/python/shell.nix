@@ -6,6 +6,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
+  name = "PYTHON-Shell";
   packages = with pkgs; [
     (pkgs.python3.withPackages (ps: [
       ps.pip
