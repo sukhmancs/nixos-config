@@ -1,1 +1,2 @@
-configure and setup vfio.nix file in modules/desktops/virtualisation/vfio.nix
+- configure and setup vfio.nix file in modules/desktops/virtualisation/vfio.nix
+- setup nftables.conf file as it is in conflict with iptables used by libvirtd. For this reason internet does not work on virt-manager. Setup nftables.conf so that it allow connection from libvirt.
