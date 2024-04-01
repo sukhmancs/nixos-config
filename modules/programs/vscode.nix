@@ -25,6 +25,7 @@
       bbenoist.nix
       jnoortheen.nix-ide
       ms-python.python
+      Dart-Code.flutter
       ];
       userSettings = {
         "files.autoSave" = "on";
