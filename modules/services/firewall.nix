@@ -13,8 +13,8 @@ let
   #   sha256 = "073k9rnpk380vygy4i7dw0ryfpsb7hwmis0w19y7wns6bhbsi2pa";
   # };
   
-  rev = "c21cf636e0aae22ecdff41a8b90fb6672864c3ee";  
-  hash = "sha256-Kkx9buPeQEJOxL+UbL/vlRk5xJ3K0ttGkAEQX1y4pIY=";
+  rev = "9ce0685c54430defac174a90febf985428e8116e";  
+  hash = "sha256-Aqd0a6Yx8FZdF5rvT12XhxPtNPau7qxZt7+qsKpQILE=";
   configurationPath = pkgs.fetchFromGitHub {
     owner = "sukhmancs";
     repo = "nixos-config";    
