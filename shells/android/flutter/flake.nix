@@ -24,7 +24,7 @@
           # either "armeabi-v7a" or "arm64-v8a", depending on the architecture of your workstation.
           includeNDK = false;
           includeSystemImages = true; # emulator related: system images are needed for the emulator.
-          systemImageTypes = [ "google_apis" "google_apis_playstore" ];
+          systemImageTypes = [ "google_apis_playstore" ];  # [ "google_apis" "google_apis_playstore" ];
           includeEmulator = true; # emulator related: if it should be enabled or not
           useGoogleAPIs = true;
           extraLicenses = [
