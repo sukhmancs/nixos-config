@@ -55,7 +55,6 @@
       neofetch
       tldr
       discord
-      keepassxc
       arandr
       joplin-desktop
       gimp
@@ -65,8 +64,6 @@
       mailutils
       tesseract4
       glib                   # C library
-      tor-browser-bundle-bin
-      projectlibre        # MS Project alternative
       easyeffects         # Limiter, compressor, equalizer, auto valume for pipewire applications
       taisei              # taisei project game
 

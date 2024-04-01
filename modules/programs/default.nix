@@ -26,11 +26,11 @@
   ./nix_index.nix
   ./nix_alien.nix
   ./pcloud.nix
-  ./kitty.nix
-  ./obs.nix
+  #./kitty.nix
+  #./obs.nix
   ./accounts.nix
   ./gnupg.nix
-  ./apparmor.nix
+  #./apparmor.nix
   ./pass.nix
   ./rofi_pass.nix
   #./keepass.nix
