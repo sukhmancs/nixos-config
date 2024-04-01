@@ -26,6 +26,7 @@
       jnoortheen.nix-ide
       ms-python.python
       dart-code.flutter
+      mkhl.direnv
       ];
       userSettings = {
         "files.autoSave" = "on";

@@ -31,11 +31,13 @@
         packages = {
           android-sdk = android.sdk.${system} (sdkPkgs: with sdkPkgs; [
             # Useful packages for building and testing.
-            build-tools-34-0-0
+            build-tools-30-0-3
             cmdline-tools-latest
             emulator
             platform-tools
             platforms-android-34
+            sources-android-34
+            tools
             system-images-android-VanillaIceCream-google-apis-playstore-x86-64
 
             # Other useful packages for a development environment.
