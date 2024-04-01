@@ -25,6 +25,7 @@ devshell.mkShell {
     }
   ];
   packages = [
+    flutter
     android-studio
     android-sdk
     gradle

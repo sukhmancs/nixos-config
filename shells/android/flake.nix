@@ -36,6 +36,7 @@
             emulator
             platform-tools
             platforms-android-34
+            system-images-android-VanillaIceCream-google-apis-playstore-x86-64
 
             # Other useful packages for a development environment.
             # ndk-26-1-10909125
