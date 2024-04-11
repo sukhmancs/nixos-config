@@ -10,21 +10,23 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "wl" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/24fa24ae-0404-481a-90a9-f6b82a1918ff";
+    { device = "/dev/disk/by-uuid/29ef9750-2b2f-4c68-a8cf-8bf2551411bf";
       fsType = "ext4";
     };
 
+  boot.initrd.luks.devices."luks-2123eba7-991b-4845-a375-d2bd7364aa16".device = "/dev/disk/by-uuid/2123eba7-991b-4845-a375-d2bd7364aa16";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3987-F9B3";
+    { device = "/dev/disk/by-uuid/9285-76A1";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/94997172-7d45-4b90-b8a4-782b6d756914"; }
+    [ { device = "/dev/disk/by-uuid/0150b486-a30f-4edc-92d0-acab40dc2d52"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -32,8 +34,10 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s20u2.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp5s0f3u3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

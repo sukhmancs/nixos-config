@@ -99,7 +99,7 @@
     };
   };
 
-  certificates.enable = true;               # Enable system-wide certificates eg, for vast.ai
+  #certificates.enable = true;               # Enable system-wide certificates eg, for vast.ai
 
   hardware.pulseaudio.enable = false;
   services = {

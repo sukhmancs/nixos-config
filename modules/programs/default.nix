@@ -19,7 +19,7 @@
   ./rofi.nix
   ./waybar.nix
   ./wofi.nix
-  ./vscode.nix
+  #./vscode.nix
   ./firejail.nix
   ./nix-ld.nix
   ./packages.nix
