@@ -22,7 +22,7 @@
     ./hardware-configuration.nix 
     ../../modules/services/wifi/wifi.nix   
     ../../modules/services/sysctl.nix
-    ../../modules/services/gpu/nvidia.nix
+    ../../modules/services/gpu/default.nix
   ] ++
   ( import ../../modules/desktops/virtualisation );
 

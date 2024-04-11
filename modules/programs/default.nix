@@ -15,11 +15,11 @@
   ./eww.nix
   ./flatpak.nix
   ./firefox.nix
-  #./chromium_policies.nix
+  ./chromium_policies.nix
   ./rofi.nix
   ./waybar.nix
   ./wofi.nix
-  #./vscode.nix
+  ./vscode.nix
   ./firejail.nix
   ./nix-ld.nix
   ./packages.nix

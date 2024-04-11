@@ -55,7 +55,7 @@ in
       inherit inputs unstable vars;
       host = {
         hostName = "laptop";
-        mainMonitor = "eDP-1";
+        mainMonitor = "eDP";
         secondMonitor = "";
       };
     };

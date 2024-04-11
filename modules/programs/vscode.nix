@@ -12,7 +12,7 @@
       (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
         src = (builtins.fetchTarball {
           url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
-          sha256 = "063y5ava6lyhg9m6pf8lgk7fbqdc8l33yj50r1zlb47mfc690hbc";
+          sha256 = "1shrpliy259zbm7xag6fijxsr2knc81rsaifqprh2zmmlg9ksqkq"; # In the first build, an error might occur if the SHA256 value changes. Check the error message for the new SHA256 value and update it accordingly. 
         });
         version = "latest";
         
